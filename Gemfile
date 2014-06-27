@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'googlebooks'
+gem 'rspec-rails', '2.99.0'
