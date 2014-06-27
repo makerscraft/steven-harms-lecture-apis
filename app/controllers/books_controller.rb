@@ -3,9 +3,9 @@ class BooksController < ApplicationController
   end
 
   def enter_a_book
-    book_result = GoogleBooks.search(params[:title]).first
+    book_result = GoogleBooksAdapter.new(params[:title]).search
     @title = book_result.title
-    @author = book_result.authors
+    @author = book_result.author
   end
 
   def reading_rainbow
