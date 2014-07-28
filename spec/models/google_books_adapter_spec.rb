@@ -13,10 +13,15 @@ describe GoogleBooksAdapter do
     end
   end
 
-  describe "when searching for a book that exists" do
-    let!(:googlebooks_response){ {title: nil, authors: [ nil ]} }
+  describe "when searching for a book that does not exist" do
+    let!(:nil_googlebooks_response){ {} }
 
-    it "does not blow up when author is nil"
-    it "does not blow up when title is nil"
+    it "does not blow up when author is nil" do
+      expect{ GoogleBooksAdapter.new(nil_googlebooks_response).author }.to_not raise_error
+    end
+
+    it "does not blow up when title is nil" do
+      expect{ GoogleBooksAdapter.new(nil_googlebooks_response).title }.to_not raise_error
+    end
   end
 end

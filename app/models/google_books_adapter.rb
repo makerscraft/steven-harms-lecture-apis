@@ -8,6 +8,6 @@ class GoogleBooksAdapter
   end
 
   def author
-    @raw_response[:authors].first
+    Array(@raw_response[:authors]).first
   end
 end
