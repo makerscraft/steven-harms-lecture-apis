@@ -1,0 +1,2 @@
+class GoogleBooksAdapter
+end
