@@ -3,8 +3,9 @@ class BooksController < ApplicationController
   end
 
   def enter_a_book
-    @title = "stub title"
-    @author = "stub author"
+    book = GoogleBooks.search(params[:title]).first
+    @title = book.title
+    @author = book.authors
   end
 
   def reading_rainbow
