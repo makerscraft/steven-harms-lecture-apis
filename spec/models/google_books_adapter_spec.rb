@@ -12,4 +12,11 @@ describe GoogleBooksAdapter do
       expect(GoogleBooksAdapter.new(googlebooks_response).title).to eql "Either / Or"
     end
   end
+
+  describe "when searching for a book that exists" do
+    let!(:googlebooks_response){ {title: nil, authors: [ nil ]} }
+
+    it "does not blow up when author is nil"
+    it "does not blow up when title is nil"
+  end
 end
